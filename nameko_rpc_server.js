@@ -3,9 +3,9 @@ const amqp = require('amqplib/callback_api');
 
 
 const config = {
-  AMQP_HOST: 'amqp://localhost',
-  EXCHANGE: 'nameko-rpc',
-  SERVICE_NAME: 'meetup.pizza_model',
+    AMQP_HOST: process.env.AMQP_HOST || 'amqp://localhost',
+    EXCHANGE: process.env.EXCHANGE || 'nameko-rpc',
+    SERVICE_NAME: process.env.SERVICE_NAME || 'meetup.pizza_model',
 };
 
 const pizzaFunc = (headCount, flakeFactor = 0.35) => {
